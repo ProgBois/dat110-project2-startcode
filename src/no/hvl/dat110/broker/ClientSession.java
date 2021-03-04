@@ -7,7 +7,7 @@ import no.hvl.dat110.messagetransport.Connection;
 public class ClientSession {
 
 	private String user;
-	
+
 	// underlying message transport connection
 	private Connection connection;
 
@@ -24,6 +24,14 @@ public class ClientSession {
 		}
 	}
 
+	public Connection getConnection() {
+		return connection;
+	}
+
+	public void setConnection(Connection connection) {
+		this.connection = connection;
+	}
+
 	public String getUser() {
 		return user;
 	}
@@ -31,7 +39,7 @@ public class ClientSession {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	
+
 	public void send(Message message) {
 
 		MessageUtils.send(connection, message);
